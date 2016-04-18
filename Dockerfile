@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER buildmaster@rocket.chat
+MAINTAINER Praney Behl
 
 # gpg: key 4FD08014: public key "Rocket.Chat Buildmaster <buildmaster@rocket.chat>" imported
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104
@@ -34,5 +34,5 @@ RUN set -x \
  && rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc \
  && npm install -g npm@"$NPM_VERSION" \
  && npm cache clear \
- && groupadd -r rocketchat \
- && useradd -r -g rocketchat rocketchat
+ && groupadd -r meteorapp \
+ && useradd -r -g meteorapp meteorapp
